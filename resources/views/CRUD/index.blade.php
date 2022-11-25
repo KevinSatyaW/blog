@@ -9,8 +9,8 @@
             <th class="px-4 py-2 border">Konten</th>
             <th class="px-4 py-2 border">Aksi</th>
         </tr>
+        @forelse ($konten as $index => $item)
         <tr>
-            @forelse ($konten as $index => $item)
             <th class="px-4 py2 border">{{$index + 1}}</th>
             <th class="px-4 py2 border">{{$item->Judul}}</th>
             <th class="px-4 py2 border">{{$item->konten}}</th>
@@ -20,9 +20,11 @@
                     <a href="">Delete</a>
                 </div>
             </th>
-            @empty
-            <th colsppan ="12" class="px-4 py-2 border">Belum Ada Konten</th>
-            @endforelse
+        </tr>
+        <tr>
+        @empty
+        <th colsppan ="12" class="px-4 py-2 border">Belum Ada Konten</th>
+        @endforelse
         </tr>
     </table>
 </div>
